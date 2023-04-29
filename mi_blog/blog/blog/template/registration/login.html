@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar secion</title>
+</head>
+<body>
+    <p>Inicio de seccion requerido</p>
+    <form method="POST">
+        {% csrf_token %}
+        <label for="usuario">
+            usuario
+            <input type="text" name="username">
+        </label>
+        <label for="pass">
+            contraseña
+            <input type="password" name="password">
+        </label>
+        <button type="submit">Iniciar seccion</button>
+    </form>
+</body>
+</html>

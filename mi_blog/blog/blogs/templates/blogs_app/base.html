@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}hola{% endblock %}</title>
+    <style>
+        body {
+            background-color: #1c1c1c;
+            color: #ffffff;
+        }
+        nav {
+            background-color: #444444;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+        nav li {
+            display: inline-block;
+            margin-right: 10px;
+        }
+        nav li a {
+            display: block;
+            color: #ffffff;
+            text-align: center;
+            padding: 8px;
+            text-decoration: none;
+        }
+        nav li a:hover {
+            background-color: #333333;
+        }
+        main {
+            margin: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="/appblog/">Inicio</a></li>
+            <li><a href="{% url 'blog:index' %}">blogs</a></li>
+            <li><a href="{% url 'blog:create' %}">Crear</a></li>
+        </ul>
+    </nav>
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+</body>
+</html>

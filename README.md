@@ -25,6 +25,6 @@ Realizado por:Axel Gabriel Duarte Gonzalez
 - Como dato adicional e creado un super usuario cullo username es admin y password es admin
 
 - Aqui le dejo un link de youtube en el cual mostrare el funcionamiento mas detalladamente
----------------------------------><---------------------------------
+--------------------------------->https://www.youtube.com/watch?v=jSBM5g5j3A0<---------------------------------
 
 Estoy trabajando para traer la actualizacion de proyecto terminado los mas pronto posible, Gracias por su comprencion y que tenga buen dia

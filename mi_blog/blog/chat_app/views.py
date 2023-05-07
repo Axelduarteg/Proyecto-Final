@@ -16,7 +16,7 @@ def chatroom(request):
             message = form.cleaned_data['message']
             receiver = User.objects.get(id=receiver_id)
             Message.objects.create(sender=request.user, receiver=receiver, message=message)
-            return redirect('chatroom')
+            return render(request, 'chat_room.html', {'users': users, 'form': form})
     else:
         form = SendMessageForm()
     return render(request, 'chat_room.html', {'users': users, 'form': form})

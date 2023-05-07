@@ -19,12 +19,15 @@ Realizado por:Axel Gabriel Duarte Gonzalez
 
 - Cuarto Paso:
 
-    todavia no esta totalmente terminado por lo que el apartado de CRUD de los blogs todavia no esta listo en su totalidad, por lo cual no podemos crear, leer, actualizar o eliminar los blogs en la pagina princiipal,
-    podemos acceder a un listado de todos los blogs precionando el boton de Buscar mas blogs donde podremos crear, leer, actualizar o eliminar cualquier blogs.
+    Para acceder al apartado de CRUD de los blog temos que darle en la opcion de ver mas blog en la parte baja de la pagina principal, depues de dar clic nos llevara a una pagina donde podremos ver todos los blog hechos y editarlos y de no aver ningun blog hecho mostrara un mensaje 
+    
+- Quito paso
+
+    Para ir al chat tenemos que dirigirnos asta lo ultino del la pagina principal donde se encuentra un apartado en el que podremos escribir el nombre de otro usuario y al buscarlo se abrira una ventana para chatear con el.
 
 - Como dato adicional e creado un super usuario cullo username es admin y password es admin
 
 - Aqui le dejo un link de youtube en el cual mostrare el funcionamiento mas detalladamente
---------------------------------->https://www.youtube.com/watch?v=jSBM5g5j3A0<---------------------------------
+--------------------------------->https://youtu.be/dqskkQSZT0s<---------------------------------
 
-Estoy trabajando para traer la actualizacion de proyecto terminado los mas pronto posible, Gracias por su comprencion y que tenga buen dia
+Perdon por la demora y espero pueda disculpar la hora, Gracias por su comprencion y que tenga buen dia

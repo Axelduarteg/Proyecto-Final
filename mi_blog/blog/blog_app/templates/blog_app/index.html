@@ -32,15 +32,16 @@
                             <li class="nav-item"><a class="nav-link" href="#about">Acerca de mí</a></li>
                             <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
                             <li class="nav-item"><a class="nav-link" href="#portfolio">Blogs</a></li>
-                            <li class="nav-item"><a class="nav-link" href="{% url 'edit_user' user_id=request.user.id %}">Editar perfil</a></li>
-                            <li class="nav-item"><a class="nav-link" href="logout">Logout</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../accounts/profile">Editar perfil</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../accounts/logout">Logout</a></li>
+                            <img src="{{ avatar }}" alt="" style="width: 50px; height: 50px; border-radius: 50%; overflow: hidden;">
                         {% else %}
                             <li class="nav-item"><a class="nav-link" href="#about">Acerca de mí</a></li>
                             <li class="nav-item"><a class="nav-link" href="#services">Servicios</a></li>
                             <li class="nav-item"><a class="nav-link" href="#portfolio">Blogs</a></li>
-                            <li class="nav-item"><a class="nav-link" href="login">Login</a></li>
-                            <li class="nav-item"><a class="nav-link" href="register">Register</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../accounts/LR">Login/Register</a></li>
                         {% endif %}
+
                     </ul>
                 </div>
             </div>
@@ -170,18 +171,28 @@
                             </a>
                         </div> 
                         <!-- pon la pagina de ver mas aqui-->
-                        <a class="btn btn-light btn-xl" href="../appblogs/">Buscar más temas</a>
+                        <a class="btn btn-light btn-xl" href="../appblogs/">Buscar más blogs</a>
                     </div>
                 </div>
             </div>
             <!-- Call to action-->
+            {% if user.is_authenticated %}
+            <section class="page-section bg-dark text-white">
+                <div class="container px-4 px-lg-5 text-center">
+                    <h2 class="mb-4">¿Quiere chatear con un creador de blog?</h2>
+                    <!--  pon la pagina de registro aqui-->
+                    <a class="btn btn-light btn-xl" href="LR">Clic aquí ahora!</a>
+                </div>
+            </section>
+            {% else %}
             <section class="page-section bg-dark text-white">
                 <div class="container px-4 px-lg-5 text-center">
                     <h2 class="mb-4">¿Quieres añadir tu propio Blog?</h2>
                     <!--  pon la pagina de registro aqui-->
-                    <a class="btn btn-light btn-xl" href="register">Regístrate Ahora!</a>
+                    <a class="btn btn-light btn-xl" href="../accounts/LR">Regístrate Ahora!</a>
                 </div>
             </section>
+            {% endif %}
         <!-- Footer-->
         <footer class="bg-light py-5">
             <div class="container px-4 px-lg-5"><div class="small text-center text-muted">Copyright &copy; 2023 - Axel.ing</div></div>

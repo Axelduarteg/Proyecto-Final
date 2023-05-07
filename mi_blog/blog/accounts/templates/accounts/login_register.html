@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+ <html lang="en" class="no-js">
+    <head>
+        {% load static %}
+        <meta charset="UTF-8" />
+        <title>Login/Registration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <meta name="description" content="Login and Registration Form with" />
+        <meta name="keywords" content="html5, css3, form, switch, animation, :target, pseudo-class" />
+        <meta name="author" content="Codrops" />
+        <link rel="shortcut icon" href="../favicon.ico"> 
+        <link rel="stylesheet" type="text/css" href={% static "blog_app\css\demo.css" %} />
+        <link rel="stylesheet" type="text/css" href={% static "blog_app\css\style.css" %} />
+		<link rel="stylesheet" type="text/css" href={% static "blog_app\css\animate-custom.css" %} />
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <h1>Bienvenido</span></h1>
+				<nav class="codrops-demos">
+				</nav>
+            </header>
+            <section>				
+                <div id="container_demo" >
+                    <a class="hiddenanchor" id="toregister"></a>
+                    <a class="hiddenanchor" id="tologin"></a>
+                    <div id="wrapper">
+                        {% if not user.is_authenticated %}
+                            <div id="login" class="animate form">
+                                <form  action="{% url 'login' %}" method="POST" autocomplete="on">
+                                    {% csrf_token %}
+                                    <h1>Ingresa Ahora</h1> 
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <div class="alert alert-{{ message.tags }}">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    <p> 
+                                        <label for="username" class="uname" data-icon="u" > Ingresa tu usuario </label>
+                                        <input id="username" name="username" required="required" type="text" placeholder="MiUsuario"/>
+                                    </p>
+                                    <p> 
+                                        <label for="password" class="youpasswd" data-icon="p"> Ingresa tu clave </label>
+                                        <input id="password" name="password" required="required" type="password" placeholder="@Coderhouse" /> 
+                                    </p>
+                                    <p class="login button"> 
+                                        <input type="submit" value="Ingresar"/> 
+                                    </p>
+                                    <p class="change_link">
+                                        No tienes una cuenta?
+                                        <a href="#toregister" class="to_register">Registrate Ahora!</a>
+                                    </p>
+                                </form>
+                            </div>
+                            
+                            <div id="register" class="animate form">
+                                <form  action="{% url 'register' %}" method="POST" autocomplete="on">
+                                    <h1> Registrate </h1> 
+                                    {% csrf_token %}
+                                    {% if messages %}
+                                        {% for message in messages %}
+                                            <div class="alert alert-{{ message.tags }}">
+                                                {{ message }}
+                                            </div>
+                                        {% endfor %}
+                                    {% endif %}
+                                    <p> 
+                                        <label>Ingresa tu usuario</label>
+                                        <input id="id_username" name="username" required="required" type="text" placeholder="MiNombreDeUsuario" class="uname" />
+                                    </p>
+                                    <p> 
+                                        <label> Ingresa tu email</label>
+                                        <input id="id_email" name="email" required="required" type="email" placeholder="MiEmail@email.com" class="youmail" /> 
+                                    </p>
+                                    <p> 
+                                        <label>Ingresa tu contraseña </label>
+                                        <input id="id_password1" name="password1" required="required" type="password" placeholder="@Coderhouse" class="youpasswd" />
+                                    </p>
+                                    <p> 
+                                        <label>Por Favor Confirma Tu Contraseña</label>
+                                        <input id="id_password2" name="password2" required="required" type="password" placeholder="@Coderhouse" class="youpasswd" />
+                                    </p>
+                                    <p class="signin button">
+                                        <input type="submit" value="Registrame Ya!" /> 
+                                    </p>
+                                    <p class="change_link">  
+                                        Ya te registraste ?
+                                        <a href="#tologin" class="to_register"> Ir al login </a>
+                                    </p>
+                                </form>
+                            </div>
+                        {% else %}
+                            {% block edit %}{% endblock %}
+                        {% endif %}             
+                    </div>
+                </div>  
+            </section>
+        </div>
+    </body>
+</html>

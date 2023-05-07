@@ -181,7 +181,17 @@
                 <div class="container px-4 px-lg-5 text-center">
                     <h2 class="mb-4">¿Quiere chatear con un creador de blog?</h2>
                     <!--  pon la pagina de registro aqui-->
-                    <a class="btn btn-light btn-xl" href="LR">Clic aquí ahora!</a>
+                    <form>
+                        <label for="username">Escriba un nombre de usuario:</label><br>
+                        <input type="text" id="username" name="username"><br>
+                        <button type="button" onclick="irAChat()">Ir</button>
+                    </form>
+                    <script>
+                        function irAChat() {
+                            var username = document.getElementById("username").value;
+                            window.location.href = "/chatapp/ms/" + username;
+                        }
+                    </script>
                 </div>
             </section>
             {% else %}

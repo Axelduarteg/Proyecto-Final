@@ -1,15 +1,11 @@
 {% extends 'blogs_app/base.html' %}
 
 {% block content %}
-  <h1>{{ blog.title }}</h1>
-  {% if image %}
-  <img src="{{ image.url }}" alt="{{ blog.title }} image">
-  {% endif %}
+  <h2>{{ blog.title }}</h2>
+  <img src="{{ blog.avatar.url }}" alt="{{ blog.title }} avatar">
   <p>{{ blog.content }}</p>
-  <p>Created on {{ blog.created_at }}</p>
-  <a href="{% url 'blog:update' blog.id %}">Editar</a>
-  <form method="post" action="{% url 'blog:delete' blog.id %}">
-    {% csrf_token %}
-    <button type="submit">Eliminar</button>
-  </form>
+  <p>Created: {{ blog.created_at }}</p>
+  <p>Last updated: {{ blog.updated_at }}</p>
+  <a href="{% url 'blog:update' blog.id %}">editar</a>
+  <a href="{% url 'blog:delete' blog.id %}">eliminar</a>
 {% endblock %}

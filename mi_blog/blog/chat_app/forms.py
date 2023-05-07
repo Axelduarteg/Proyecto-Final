@@ -1,5 +1,10 @@
 from django import forms
 
-class SendMessageForm(forms.Form):
-    message = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Escribe tu mensaje aquí'}))
-    receiver_id = forms.IntegerField(widget=forms.HiddenInput())
+class FormMensajes(forms.Form):
+    mensaje = forms.CharField(widget=forms.Textarea(attrs={
+        "class": "formulario_ms",
+        "placeholder": "Escribe tu mensaje"
+    }))
+    avatar = forms.ImageField(widget=forms.ClearableFileInput(attrs={
+        "class": "formulario_avatar",
+    }), required=False)

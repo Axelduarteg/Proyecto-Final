@@ -76,7 +76,7 @@ def edit_user(request):
                     avatar.imagen.delete()
                 Avatar.objects.create(user=user, imagen=avatar_form.cleaned_data.get('imagen'))
             update_session_auth_hash(request, user)
-            return redirect('inicio')
+            return redirect('../../appblog')
     else:
         user_form = UserEditForm(instance=user)
         avatar_form = AvatarForm()

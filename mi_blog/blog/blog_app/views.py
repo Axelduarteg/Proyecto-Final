@@ -5,13 +5,14 @@ import os
 
 def inicio(request):
     if request.user.is_authenticated:
-        try:
-            avatar= Avatar.objects.filter(user=request.user.id)[0].imagen.url
-        except (AttributeError, Avatar.DoesNotExist, IndexError):
-            avatar = os.path.join(settings.MEDIA_URL, 'avatars', 'default_avatar.jpg')
-        return render(request, 'blog_app/index.html', {'avatar': avatar})
+        return render(request, 'blog_app/index.html', {'avatar':obtenerAvatar(request)})
     else:
         return render(request, 'blog_app/index.html')
 
-
+def obtenerAvatar(request):
+    avatares=Avatar.objects.filter(user=request.user.id)
+    if len (avatares)!=0:
+        return avatares[0].imagen.url
+    else:
+        return "/media/avatars/default_avatar.jpg"
 
